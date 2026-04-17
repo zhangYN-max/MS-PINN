@@ -2,18 +2,18 @@
 ================================================================
 模块2: 神经网络 + 训练 + 经典求解器基准对比
 Module 2: Neural Net / Training / Classical Solver Benchmark
-破产概率联合求解框架 v10 (JCP增强版)
+破产概率联合求解框架
 ================================================================
 包含:
   - 配置点采样
   - RatioNet 神经网络
   - 损失函数
   - 两阶段训练 (含 L-BFGS 精磨)
-  - ★ v10 新增: 经典基准求解器
+  - 新增: 经典基准求解器
       FDM (Finite Difference Method)
       Chebyshev Spectral Method
       Quadrature-based IDE Solver
-  - ★ v10 新增: 消融实验 (Ablation Study)
+  - 新增: 消融实验 (Ablation Study)
 ================================================================
 """
 
@@ -215,7 +215,7 @@ def train_for_beta(beta_key, x_arr, ep=EPSILON, lam=LAMBDA,
     return np.clip(psi_pinn, 0, 1)
 
 # ══════════════════════════════════════════════════════════════
-# ★ v10 新增: 经典基准求解器 (JCP 必备 Section 5.X)
+# 经典基准求解器
 # ══════════════════════════════════════════════════════════════
 
 def solve_fdm(x_arr, ep=EPSILON, lam=LAMBDA, beta_f=None, betap_f=None):
@@ -418,7 +418,7 @@ def benchmark_classical_solvers(x_arr, ep=EPSILON, lam=LAMBDA,
 
 
 # ══════════════════════════════════════════════════════════════
-# ★ v10 新增: Ablation Study (消融实验)
+# Ablation Study (消融实验)
 # ══════════════════════════════════════════════════════════════
 
 ABLATION_VARIANTS = {
