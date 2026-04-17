@@ -1,7 +1,7 @@
 """
 ================================================================
 主程序 / Main Entry Point
-破产概率联合求解框架 v10 (JCP增强版)
+破产概率联合求解框架
 ================================================================
 调用顺序:
   [1]  核心解的计算 (Module 1)
@@ -9,10 +9,10 @@
   [3]  收敛性分析 + 截断定理 (Module 3)
   [4]  泛化验证 (β1-β7) (Module 3)
   [5]  λ 敏感性 (Module 3)
-  [6]  ★ 经典求解器基准对比 (Module 2)
-  [7]  ★ 消融实验 (Module 2)
-  [8]  ★ 边界层解析比较 (Module 3)
-  [9]  ★ 复杂度分析 (Module 3)
+  [6]  经典求解器基准对比 (Module 2)
+  [7]  消融实验 (Module 2)
+  [8]  边界层解析比较 (Module 3)
+  [9]  复杂度分析 (Module 3)
   [10] 生成全部图表 (Module 4)
 ================================================================
 """
@@ -191,13 +191,13 @@ def main():
         ep_sup=5000, ep_phys=5000)
 
     # ════════════════════════════════════════════════════════
-    # ★ [9] 边界层解析
+    # [9] 边界层解析
     # ════════════════════════════════════════════════════════
     print('\n[10] Boundary layer detailed analysis...')
     bl_data = boundary_layer_analysis(x_test, psi_num, psi_ms_sol)
 
     # ════════════════════════════════════════════════════════
-    # ★ [10] 复杂度分析
+    # [10] 复杂度分析
     # ════════════════════════════════════════════════════════
     print('\n[11] Complexity scaling study...')
     scaling_data = complexity_scaling_study(
@@ -224,7 +224,7 @@ def main():
         lam_results=lam_results,
     )
 
-    # ★ v10 新增图
+    # 新增图
     plot_benchmark_comparison(x_test, bench_results)
     plot_ablation_study(x_test, ablation_results)
     plot_boundary_layer_detail(bl_data)
