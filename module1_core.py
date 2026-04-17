@@ -1,11 +1,11 @@
 """
 ================================================================
 模块1: 核心数学函数 / Core Mathematical Functions
-破产概率联合求解框架 v10 (JCP增强版)
+破产概率联合求解框架
 ================================================================
 包含:
   - 全局参数
-  - β(x)函数族（含新增非平滑/随机类型）
+  - β(x)函数族（含非平滑/随机类型）
   - 经典解析解: WKB, MS新旧版, ms_order1
   - R-ODE系数: D1, D2, P_eff, Q
   - 参考解: ode_reference
@@ -41,7 +41,6 @@ def _random_betap(x, h=1e-5):
     return (_random_beta(x+h) - _random_beta(x-h)) / (2*h)
 
 BETA_CASES = {
-    # ─── 原有4种 ────────────────────────────────────────────
     'beta1': {
         'name':    r'$\beta_1=1.5+0.3\sin x$ (基准)',
         'name_en': r'$\beta_1=1.5+0.3\sin x$',
@@ -333,10 +332,8 @@ def verify_operator_coercivity(x_arr=None, ep=EPSILON, lam=LAMBDA,
     print(f'  ||Q||_inf = {result["Q_norm_inf"]:.4e}')
     print(f'  eps*beta_min = {result["ep_beta_min"]:.4e}  (diffusion lower bound)')
     return result
-
-
 # ══════════════════════════════════════════════════════════════
-# v10 新增: 三项误差分解
+#三项误差分解
 # ══════════════════════════════════════════════════════════════
 
 def error_decomposition(x_arr, ep=EPSILON, lam=LAMBDA,
