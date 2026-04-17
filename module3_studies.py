@@ -1,16 +1,16 @@
 """
 ================================================================
 模块3: 数值实验 / Numerical Studies
-破产概率联合求解框架 v10 (JCP增强版)
+破产概率联合求解框架
 ================================================================
 包含:
   - 收敛阶分析
   - 最优截断定理验证
   - 泛化性验证（含v10新增非平滑/随机β类型）
   - λ参数敏感性分析
-  - ★ v10 新增: 边界层解析比较 (gradient comparison)
-  - ★ v10 新增: 复杂度分析 (scaling law vs eps/N/m)
-  - ★ v10 新增: 时间-精度 tradeoff 图数据
+  - 边界层解析比较 (gradient comparison)
+  - 复杂度分析 (scaling law vs eps/N/m)
+  - 时间-精度 tradeoff 图数据
 ================================================================
 """
 
@@ -141,7 +141,7 @@ def optimal_truncation_study(x_test, eps_list=None, lam=LAMBDA):
     return E0_list, E1_list, ratio_list, cond_list
 
 # ══════════════════════════════════════════════════════════════
-# 泛化性验证（含v10新增β类型）
+# 泛化性验证
 # ══════════════════════════════════════════════════════════════
 
 def generalization_study(x_test, ep=EPSILON, lam=LAMBDA,
@@ -228,7 +228,7 @@ def lambda_sensitivity(x_test, lam_list=None, ep=EPSILON):
     return results
 
 # ══════════════════════════════════════════════════════════════
-# ★ v10 新增: 边界层解析比较 (gradient comparison)
+# 边界层解析比较 (gradient comparison)
 # ══════════════════════════════════════════════════════════════
 
 def boundary_layer_analysis(x_test, psi_num=None, psi_ms=None, psi_mspinn=None,
@@ -277,7 +277,7 @@ def boundary_layer_analysis(x_test, psi_num=None, psi_ms=None, psi_mspinn=None,
 
 
 # ══════════════════════════════════════════════════════════════
-# ★ v10 新增: 复杂度分析 (scaling law)
+# 复杂度分析 (scaling law)
 # ══════════════════════════════════════════════════════════════
 
 def complexity_scaling_study(
