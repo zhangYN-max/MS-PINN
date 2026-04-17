@@ -1,16 +1,15 @@
-# 破产概率联合求解框架 v10 — JCP增强版
+# 破产概率联合求解框架
 
 ## 代码结构
 
 | 文件 | 职责 | 行数 |
 |------|------|------|
 | `module1_core.py` | 核心数学函数、β族定义、解析解、R-ODE系数 | ~290 |
-| `module2_training.py` | 神经网络、训练流程、**★经典基准求解器**、**★消融实验** | ~380 |
-| `module3_studies.py` | 收敛分析、泛化、λ敏感性、**★边界层解析**、**★复杂度分析** | ~310 |
-| `module4_figures.py` | 所有图表生成（Fig1-14原有 + Fig15-19新增） | ~460 |
-| `main.py` | 主程序调度（按JCP审稿流程排列） | ~180 |
+| `module2_training.py` | 神经网络、训练流程、经典基准求解器、消融实验 | ~380 |
+| `module3_studies.py` | 收敛分析、泛化、λ敏感性、边界层解析、复杂度分析| ~310 |
+| `module4_figures.py` | 所有图表生成 | ~460 |
+| `main.py` | 主程序调度| ~180 |
 
-## v10 新增内容（对应老师审稿要求）
 
 ### ✅ 1. 经典数值方法基准对比 (Fig 15)
 位置: `module2_training.py` → `benchmark_classical_solvers()`
@@ -82,10 +81,10 @@ numpy scipy torch matplotlib
 ## 输出文件
 
 - `fig1_wkb_ms_solution.pdf/.png`  ... 原有14张
-- `fig15_classical_benchmark`  ← JCP必备
-- `fig16_ablation_study`       ← JCP必备
-- `fig17_boundary_layer_detail` ← JCP强烈建议
-- `fig18_complexity_scaling`   ← JCP必备
-- `fig19_extended_generalization` ← 提升稿件level
+- `fig15_classical_benchmark`  
+- `fig16_ablation_study`
+- `fig17_boundary_layer_detail`
+- `fig18_complexity_scaling`
+- `fig19_extended_generalization`
 - `pinn_model_v10.pth`
 - `mspinn_model_v10.pth`
